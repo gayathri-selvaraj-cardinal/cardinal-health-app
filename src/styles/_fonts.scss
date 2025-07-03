@@ -1,7 +1,9 @@
-@import "./cah-colors";
+@import './cah-colors';
+
+$font-open-sans-serif: 'Open Sans', sans-serif !important;
 
 @mixin OpenSans($weight) {
-  font-family: "Open Sans", sans-serif !important;
+  font-family: $font-open-sans-serif;
   @if $weight == bold {
     font-weight: 700 !important;
   }
@@ -24,6 +26,7 @@
     font-weight: 100 !important;
   }
 }
+
 
 h1,
 .header-h1 {
@@ -67,6 +70,7 @@ h6,
   color: $cardinal-black !important;
 }
 
+
 .body-text {
   @include OpenSans(normal);
   font-size: 14px !important;
@@ -91,6 +95,7 @@ h6,
   &:visited {
     color: $visited-links !important;
   }
+
 }
 
 .small-text-link {
@@ -105,4 +110,13 @@ h6,
   &:visited {
     color: $visited-links !important;
   }
+}
+
+@mixin font-style($font-family, $font-size, $font-weight: normal, $color: inherit, $line-height: normal, $letter-spacing: normal) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
 }

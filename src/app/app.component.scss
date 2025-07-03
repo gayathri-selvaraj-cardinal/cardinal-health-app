@@ -1,4 +1,6 @@
 @import "../styles/breakpoints";
+@import "../styles/fonts";
+@import '../styles/cah-colors';
 .spacer {
   flex: 1 1 auto;
 }
@@ -9,11 +11,7 @@ mat-toolbar {
 
 .pharmacy-info {
   background-color: #f8f9fa;
-  // padding: 8px 16px;
-  // text-align: right;
-  // font-size: 14px;
-  // color: #666;
-  // border-bottom: 1px solid #e0e0e0;
+
   .label {
     color: #000;
     text-align: right;
@@ -103,24 +101,20 @@ mat-toolbar {
 
 .desktop-header-bar {
   display: flex;
-  @include respond-to(xs) {
-    display: none;
-  }
   @include respond-to(sm) {
     display: none;
   }
+ 
   @include respond-to(md) {
     .page-title {
-      font-family: Open Sans;
-      font-weight: 500;
+      @include OpenSans(medium);
       font-size: 28px;
       line-height: 20px;
       letter-spacing: 0px;
     }
     .pharmacy-info {
       .label {
-        font-family: Open Sans;
-        font-weight: 400;
+        @include OpenSans(regular);
         font-size: 14px;
         line-height: 22px;
         letter-spacing: 0px;
@@ -128,8 +122,7 @@ mat-toolbar {
         vertical-align: bottom;
       }
       .data {
-        font-family: Open Sans;
-        font-weight: 600;
+        @include OpenSans(bolder);
         font-size: 14px;
         line-height: 22px;
         letter-spacing: 0px;
@@ -161,16 +154,14 @@ mat-toolbar {
   }
   @include respond-to(lg) {
     .page-title {
-      font-family: Open Sans;
-      font-weight: 500;
+      @include OpenSans(medium);
       font-size: 28px;
       line-height: 20px;
       letter-spacing: 0px;
     }
     .pharmacy-info {
       .label {
-        font-family: Open Sans;
-        font-weight: 400;
+        @include OpenSans(regular);
         font-size: 14px;
         line-height: 22px;
         letter-spacing: 0px;
@@ -178,8 +169,7 @@ mat-toolbar {
         vertical-align: bottom;
       }
       .data {
-        font-family: Open Sans;
-        font-weight: 600;
+        @include OpenSans(bolder);
         font-size: 14px;
         line-height: 22px;
         letter-spacing: 0px;
@@ -194,8 +184,7 @@ mat-toolbar {
     }
 
     .username-div {
-      font-family: Open Sans;
-      font-weight: 400;
+      @include OpenSans(regular);
       font-size: 14px;
       line-height: 22px;
       letter-spacing: 0px;
@@ -220,23 +209,18 @@ mat-toolbar {
 
   .brand-name,
   .page-title {
-    font-family: Open Sans;
-    font-weight: 400;
+    @include OpenSans(regular);
     font-size: 24px;
     line-height: 100%;
     letter-spacing: 0%;
     vertical-align: middle;
   }
   .brand-name {
-    color: #e42035;
+    color: $cardinal-red;
   }
 
   .spacer {
     flex: 1 1 auto;
-  }
-
-  @include respond-to(xs) {
-    display: flex;
   }
   @include respond-to(sm) {
     display: flex;

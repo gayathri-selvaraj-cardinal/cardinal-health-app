@@ -5,6 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { filter } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
+import { MOCK_PAGES } from './data/page-details-mock';
+
 
 @Component({
   selector: 'app-root',
@@ -23,6 +25,10 @@ export class AppComponent {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       this.isLoginPage = event.url === '/login' || event.url === '/';
+      const foundPage = MOCK_PAGES.filter(page=> page.url === event.url);
+      if(foundPage){
+        this.title = foundPage[0].name;
+      }
     });
 
     // Check initial route

@@ -94,27 +94,3 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .login-form mat-form-field {
   width: 100%;
 }
-
-
-.box{
-  background-color: blue;
-  padding:20px;
-  width:20px;
-  height: 20px;
-
-
-@include respond-to(md){
-background-color: red;
-  padding:25px;
-}
-@include respond-to(sm){
-background-color: green;
-  padding:35px;
-}
-
-@include respond-to(lg){
-background-color: yellow;
-  padding:45px;
-}
-
-}
